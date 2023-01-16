@@ -29,8 +29,8 @@ namespace PrimaryFlightSystem
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddTransient<FlightSystemContext>();
-
-            services.AddTransient<ILegsService, LegsService>();
+            services.AddScoped<ILegsService, LegsService>();
+            services.AddScoped<IFlightsService, FlightsService>();
 
             services.AddCors(options =>
             {

@@ -8,23 +8,23 @@ namespace PrimaryFlightSystem.Controllers
 {
     [ApiController]
     [Route("[controller]/[action]")]
-    public partial class LegsController : MyBaceController
+    public partial class FlightsController : MyBaceController
     {
-        private ILegsService legsSer;
-        public LegsController(ILegsService legsSer)
+        private IFlightsService flightsSer;
+        public FlightsController(IFlightsService flightsSer)
         {
-            this.legsSer = legsSer;
+            this.flightsSer = flightsSer;
         }
 
-        public ResultData GetLegFlights(int legNumber)
+        public ResultData GetFlightPassengers(string flightNumber)
         {
-            var res = legsSer.GetLegFlights(legNumber);
+            var res = flightsSer.GetFlightPassengers(flightNumber);
             return new ResultData(res);
         }
 
-        public ResultData GetLegDetailsById(int id)
+        public ResultData GetFlightDetails(string flightNumber)
         {
-            var res = legsSer.GetLegDetailsById(id);
+            var res = flightsSer.GetFlightDetails(flightNumber);
             if (res == null)
             {
                 return new ResultData(res.Id = -1);
