@@ -1,8 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Services;
 using Services.DataDB;
-using System.Collections.Generic;
-using System.Linq;
+using PrimaryFlightSystem.Shared;
 
 namespace PrimaryFlightSystem.Controllers
 {
@@ -31,5 +30,40 @@ namespace PrimaryFlightSystem.Controllers
             }
             return new ResultData(res);
         }
+
+        public ResultData GetRoute(string routeNumber)
+        {
+            var res = flightsSer.GetRoute(routeNumber);
+
+            return new ResultData(res) { Status = true };
+        }
+
+        public ResultData GetAllFlights()
+        {
+            var res = flightsSer.GetAllFlights();
+            return new ResultData("") { Status = res };
+        }
+
+        public ResultData FillFlights()
+        {
+            var res = flightsSer.FillFlights();
+            return new ResultData("") { Status = res };
+        }
+
+        public ResultData DeleteFlights()
+        {
+            var res = flightsSer.DeleteFlights();
+            return new ResultData("") { Status = res };
+        }
+
+        public ResultData MoveFlights()
+        {
+            flightsSer.MoveFlights();
+            return new ResultData("") { Status = true };
+        }
+
+
+
+
     }
 }

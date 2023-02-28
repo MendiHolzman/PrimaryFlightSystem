@@ -9,6 +9,8 @@ using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using Services;
 using Services.DataDB;
+//using Services;
+//using Services.DataDB;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,6 +33,7 @@ namespace PrimaryFlightSystem
             services.AddTransient<FlightSystemContext>();
             services.AddScoped<ILegsService, LegsService>();
             services.AddScoped<IFlightsService, FlightsService>();
+            services.AddScoped<IInitService, InitService>();
 
             services.AddCors(options =>
             {
@@ -77,5 +80,6 @@ namespace PrimaryFlightSystem
                 endpoints.MapControllers();
             });
         }
+
     }
 }

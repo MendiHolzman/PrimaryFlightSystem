@@ -1,4 +1,4 @@
-﻿namespace PrimaryFlightSystem.Controllers
+﻿namespace PrimaryFlightSystem.Shared
 {
     public class ResultData
     {

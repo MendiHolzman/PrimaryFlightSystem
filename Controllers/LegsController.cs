@@ -1,8 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using PrimaryFlightSystem.Shared;
 using Services;
 using Services.DataDB;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace PrimaryFlightSystem.Controllers
 {
