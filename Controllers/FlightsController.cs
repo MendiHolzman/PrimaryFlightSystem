@@ -62,8 +62,11 @@ namespace PrimaryFlightSystem.Controllers
             return new ResultData("") { Status = true };
         }
 
-
-
+        public ResultData GetFlightsNumber()
+        {
+            var res = flightsSer.GetFlightsNumber();
+            return new ResultData(res) { Status = true };
+        }
 
     }
 }
